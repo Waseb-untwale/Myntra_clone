@@ -5,6 +5,7 @@ const { getStoredItems, storeItems } = require('./data/items');
 
 const app = express();
 
+const port=process.env.PORT || 8080
 app.use(bodyParser.json());
 const path= require('path')
 app.use((req, res, next) => {
@@ -44,4 +45,4 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "Myntra-clone", "build", "index.html"));
   });
   
-app.listen(8080);
+app.listen(port);
